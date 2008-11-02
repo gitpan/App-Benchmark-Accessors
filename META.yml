@@ -1,0 +1,41 @@
+---
+abstract: 'benchmark accessor generators'
+author:
+  - 'Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>'
+build_requires:
+  Test::Compile: 0
+  Test::More: 0.70
+distribution_type: module
+generated_by: 'Module::Install version 0.76'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: App-Benchmark-Accessors
+no_index:
+  directory:
+    - inc
+    - t
+recommends:
+  Test::Pod: 0
+  Test::Pod::Coverage: 0
+requires:
+  App::Benchmark: 0
+  Class::Accessor: 0
+  Class::Accessor::Complex: 0
+  Class::Accessor::Constructor: 0
+  Class::Accessor::Fast: 0
+  Class::Accessor::Fast::XS: 0
+  Class::MethodMaker: 0
+  Class::Spiffy: 0
+  Mojo::Base: 0
+  Moose: 0
+  Mouse: 0
+  Object::Tiny: 0
+  Spiffy: 0
+  UNIVERSAL::require: 0
+  accessors: 0
+  perl: 5.6.0
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.01
