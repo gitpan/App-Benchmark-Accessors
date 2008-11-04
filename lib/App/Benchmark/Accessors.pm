@@ -4,79 +4,118 @@ use strict;
 use warnings;
 
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
-package WithMoose;
+package    # hide from PAUSE
+  WithMoose;
 use Moose;
 has myattr => ( is => 'rw' );
 
 
-package WithMooseImmutable;
+package    # hide from PAUSE
+  WithMooseImmutable;
 use Moose;
 has myattr => ( is => 'rw' );
 __PACKAGE__->meta->make_immutable;
 
 
-package WithMouse;
+package    # hide from PAUSE
+  WithMouse;
 use Mouse;
 has myattr => ( is => 'rw' );
 
 
-package WithClassAccessor;
+package    # hide from PAUSE
+  WithClassAccessor;
 use base qw(Class::Accessor);
 __PACKAGE__->mk_accessors(qw/myattr/);
 
 
-package WithClassAccessorFast;
+package    # hide from PAUSE
+  WithClassAccessorFast;
 use base qw(Class::Accessor::Fast);
 __PACKAGE__->mk_accessors(qw/myattr/);
 
 
-package WithClassAccessorFastXS;
+package    # hide from PAUSE
+  WithClassAccessorFastXS;
 use base qw(Class::Accessor::Fast::XS);
 __PACKAGE__->mk_accessors(qw/myattr/);
 
 
-package WithClassAccessorComplex;
+package    # hide from PAUSE
+  WithClassAccessorComplex;
 use base qw(Class::Accessor::Complex);
 __PACKAGE__->mk_new->mk_scalar_accessors(qw/myattr/);
 
 
-package WithClassAccessorConstructor;
+package    # hide from PAUSE
+  WithClassAccessorConstructor;
 use base qw(Class::Accessor::Constructor Class::Accessor::Complex);
 __PACKAGE__->mk_constructor->mk_scalar_accessors(qw/myattr/);
 
 
-package WithMojo;
+package    # hide from PAUSE
+  WithMojo;
 use base qw(Mojo::Base);
 __PACKAGE__->attr('myattr');
 
 
-package WithClassMethodMaker;
+package    # hide from PAUSE
+  WithClassMethodMaker;
 use Class::MethodMaker
     [ scalar => [ qw/myattr/ ],
       new    => [ qw/-hash new/ ],
     ];
 
 
-package WithObjectTiny;
+package    # hide from PAUSE
+  WithObjectTiny;
 use Object::Tiny qw/myattr/;
 
 
-package WithSpiffy;
+package    # hide from PAUSE
+  WithSpiffy;
 use Spiffy -base;
 field 'myattr';
 
 
-package WithClassSpiffy;
+package    # hide from PAUSE
+  WithClassSpiffy;
 use Class::Spiffy -base;
 field 'myattr';
 
 
-package WithAccessors;
+package    # hide from PAUSE
+  WithAccessors;
 use accessors qw(myattr);
 sub new { bless {}, shift }
+
+
+package    # hide from PAUSE
+  WithClassXSAccessor;
+use Class::XSAccessor accessors => { myattr => 'myattr' };
+sub new {
+    my $class = shift;
+    bless { @_ } => $class;
+}
+
+
+package    # hide from PAUSE
+  WithClassXSAccessorArray;
+use Class::XSAccessor::Array accessors => { myattr => 0 };
+sub new {
+    my $class = shift;
+    my %args = @_;
+    bless [ $args{myattr} ] => $class;
+}
+
+
+package    # hide from PAUSE
+  WithObjectTinyXS;
+use Object::Tiny qw/myattr/;
+use Class::XSAccessor accessors => { myattr => 'myattr' }, replace => 1;
 
 
 1;
@@ -125,6 +164,10 @@ following generators are being benchmarked:
 
 =item accessors
 
+=item Class::XSAccessor
+
+=item Class::XSAccessor::Array
+
 =back
 
 The benchmarks are being run as part of the test suite; see L<App::Benchmark>.
@@ -142,6 +185,12 @@ doesn't create setter methods, and L<accessors> doesn't generate constructors.
 
 Each benchmark test file takes an optional numeric parameter that is used as
 the number of iterations.
+
+It's probably a good idea not to read too much into these benchmarks; they
+could be seen as micro-optimization. However, if you have a complex object
+hierarchy and create lots of objects and run many many getters/setters on
+them, they could help to save some time. But be sure to use L<Devel::NYTProf>
+first to see where your real bottlenecks are.
 
 =head1 BUGS AND LIMITATIONS
 
