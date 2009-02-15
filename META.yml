@@ -1,9 +1,8 @@
 ---
-abstract: 'benchmark accessor generators'
+abstract: 'Benchmark accessor generators'
 author:
   - 'Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>'
 build_requires:
-  Test::Compile: 0
   Test::More: 0.70
 distribution_type: module
 generated_by: 'Module::Install version 0.77'
@@ -16,9 +15,6 @@ no_index:
   directory:
     - inc
     - t
-recommends:
-  Test::Pod: 0
-  Test::Pod::Coverage: 0
 requires:
   App::Benchmark: 0.02
   Class::Accessor: 0
@@ -42,4 +38,4 @@ requires:
   perl: 5.6.0
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.04
+version: 0.05
