@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 
 package    # hide from PAUSE
@@ -25,6 +25,11 @@ package    # hide from PAUSE
 use Mouse;
 has myattr => ( is => 'rw' );
 
+package    # hide from PAUSE
+  WithMouseImmutable;
+use Mouse;
+has myattr => ( is => 'rw' );
+__PACKAGE__->meta->make_immutable;
 
 package    # hide from PAUSE
   WithClassAccessor;
