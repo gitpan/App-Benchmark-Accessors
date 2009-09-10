@@ -2,10 +2,9 @@ package App::Benchmark::Accessors;
 
 use strict;
 use warnings;
+use 5.006;
 
-
-our $VERSION = '0.06';
-
+our $VERSION = '0.07';
 
 package    # hide from PAUSE
   WithMoose;
@@ -60,6 +59,12 @@ package    # hide from PAUSE
 use base qw(Class::Accessor::Constructor Class::Accessor::Complex);
 __PACKAGE__->mk_constructor->mk_scalar_accessors(qw/myattr/);
 
+package    # hide from PAUSE
+  WithClassAccessorClassy;
+use Class::Accessor::Classy;
+with 'new';
+rw 'myattr';
+no  Class::Accessor::Classy;
 
 package    # hide from PAUSE
   WithMojo;
@@ -155,7 +160,7 @@ App::Benchmark::Accessors - Benchmark accessor generators
 
 =head1 SYNOPSIS
 
-None - just run the test suite
+# None - just run the test suite
 
 =head1 DESCRIPTION
 
@@ -241,7 +246,7 @@ Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2008 by Marcel GrE<uuml>nauer
+Copyright 2008-2009 by Marcel GrE<uuml>nauer
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
