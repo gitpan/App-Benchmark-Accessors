@@ -1,0 +1,144 @@
+{
+   "resources" : {
+      "homepage" : "http://search.cpan.org/dist/App-Benchmark-Accessors/",
+      "repository" : "http://github.com/hanekomu/App-Benchmark-Accessors",
+      "bugtracker" : "http://rt.cpan.org/Public/Dist/Display.html?Name=App-Benchmark-Accessors"
+   },
+   "generated_by" : "Dist::Zilla version 1.100711",
+   "meta-spec" : {
+      "version" : 1.4,
+      "url" : "http://module-build.sourceforge.net/META-spec-v1.4.html"
+   },
+   "version" : "1.100870",
+   "name" : "App-Benchmark-Accessors",
+   "author" : [
+      "Marcel Gruenauer <marcel@cpan.org>"
+   ],
+   "license" : "perl",
+   "build_requires" : {},
+   "provides" : {
+      "WithObjectTiny" : {
+         "version" : "1.100870",
+         "file" : "lib/App/Benchmark/Accessors.pm"
+      },
+      "WithObjectTinyXS" : {
+         "version" : "1.100870",
+         "file" : "lib/App/Benchmark/Accessors.pm"
+      },
+      "WithMouseImmutable" : {
+         "version" : "1.100870",
+         "file" : "lib/App/Benchmark/Accessors.pm"
+      },
+      "WithRose" : {
+         "version" : "1.100870",
+         "file" : "lib/App/Benchmark/Accessors.pm"
+      },
+      "WithMooseImmutable" : {
+         "version" : "1.100870",
+         "file" : "lib/App/Benchmark/Accessors.pm"
+      },
+      "WithClassSpiffy" : {
+         "version" : "1.100870",
+         "file" : "lib/App/Benchmark/Accessors.pm"
+      },
+      "WithClassXSAccessorArray" : {
+         "version" : "1.100870",
+         "file" : "lib/App/Benchmark/Accessors.pm"
+      },
+      "WithClassAccessorFast" : {
+         "version" : "1.100870",
+         "file" : "lib/App/Benchmark/Accessors.pm"
+      },
+      "WithMojo" : {
+         "version" : "1.100870",
+         "file" : "lib/App/Benchmark/Accessors.pm"
+      },
+      "WithMoose" : {
+         "version" : "1.100870",
+         "file" : "lib/App/Benchmark/Accessors.pm"
+      },
+      "WithClassXSAccessor" : {
+         "version" : "1.100870",
+         "file" : "lib/App/Benchmark/Accessors.pm"
+      },
+      "WithClassMethodMaker" : {
+         "version" : "1.100870",
+         "file" : "lib/App/Benchmark/Accessors.pm"
+      },
+      "WithMouse" : {
+         "version" : "1.100870",
+         "file" : "lib/App/Benchmark/Accessors.pm"
+      },
+      "WithClassAccessorClassy" : {
+         "version" : "1.100870",
+         "file" : "lib/App/Benchmark/Accessors.pm"
+      },
+      "WithSpiffy" : {
+         "version" : "1.100870",
+         "file" : "lib/App/Benchmark/Accessors.pm"
+      },
+      "WithRubyishAttribute" : {
+         "version" : "1.100870",
+         "file" : "lib/App/Benchmark/Accessors.pm"
+      },
+      "App::Benchmark::Accessors" : {
+         "version" : "1.100870",
+         "file" : "lib/App/Benchmark/Accessors.pm"
+      },
+      "WithClassAccessorFastXS" : {
+         "version" : "1.100870",
+         "file" : "lib/App/Benchmark/Accessors.pm"
+      },
+      "WithClassAccessor" : {
+         "version" : "1.100870",
+         "file" : "lib/App/Benchmark/Accessors.pm"
+      },
+      "WithAccessors" : {
+         "version" : "1.100870",
+         "file" : "lib/App/Benchmark/Accessors.pm"
+      },
+      "WithClassAccessorComplex" : {
+         "version" : "1.100870",
+         "file" : "lib/App/Benchmark/Accessors.pm"
+      },
+      "WithClassAccessorConstructor" : {
+         "version" : "1.100870",
+         "file" : "lib/App/Benchmark/Accessors.pm"
+      }
+   },
+   "requires" : {
+      "Scalar::Util" : "0",
+      "Rose::Object::MakeMethods::Generic" : "0",
+      "Class::Accessor::Fast::XS" : "0",
+      "Class::Accessor::Fast" : "0",
+      "Class::Spiffy" : "0",
+      "Class::Accessor::Classy" : "0",
+      "Class::Accessor::Constructor" : "0",
+      "File::Find" : "0",
+      "Mouse" : "0",
+      "Class::XSAccessor::Array" : "0",
+      "Moose" : "0",
+      "Class::Accessor::Complex" : "0",
+      "Class::MethodMaker" : "0",
+      "English" : "0",
+      "Rose::Object" : "0",
+      "parent" : "0",
+      "Spiffy" : "0",
+      "Class::Accessor" : "0",
+      "Object::Tiny" : "0",
+      "Mojo::Base" : "0",
+      "Class::XSAccessor" : "0",
+      "Carp" : "0",
+      "perl" : "5.006",
+      "Test::More" : "0.88",
+      "File::Temp" : "0",
+      "Rubyish::Attribute" : "0",
+      "App::Benchmark" : "0",
+      "accessors" : "0"
+   },
+   "abstract" : "Benchmark accessor generators",
+   "configure_requires" : {
+      "ExtUtils::MakeMaker" : "6.11"
+   }
+}
+

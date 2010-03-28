@@ -1,25 +1,86 @@
 ---
 abstract: 'Benchmark accessor generators'
 author:
-  - 'Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>'
-build_requires:
-  ExtUtils::MakeMaker: 6.42
-  Test::More: 0.70
+  - 'Marcel Gruenauer <marcel@cpan.org>'
+build_requires: {}
 configure_requires:
-  ExtUtils::MakeMaker: 6.42
-distribution_type: module
-generated_by: 'Module::Install version 0.85'
+  ExtUtils::MakeMaker: 6.11
+generated_by: 'Dist::Zilla version 1.100711'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: App-Benchmark-Accessors
-no_index:
-  directory:
-    - inc
-    - t
+provides:
+  App::Benchmark::Accessors:
+    file: lib/App/Benchmark/Accessors.pm
+    version: 1.100870
+  WithAccessors:
+    file: lib/App/Benchmark/Accessors.pm
+    version: 1.100870
+  WithClassAccessor:
+    file: lib/App/Benchmark/Accessors.pm
+    version: 1.100870
+  WithClassAccessorClassy:
+    file: lib/App/Benchmark/Accessors.pm
+    version: 1.100870
+  WithClassAccessorComplex:
+    file: lib/App/Benchmark/Accessors.pm
+    version: 1.100870
+  WithClassAccessorConstructor:
+    file: lib/App/Benchmark/Accessors.pm
+    version: 1.100870
+  WithClassAccessorFast:
+    file: lib/App/Benchmark/Accessors.pm
+    version: 1.100870
+  WithClassAccessorFastXS:
+    file: lib/App/Benchmark/Accessors.pm
+    version: 1.100870
+  WithClassMethodMaker:
+    file: lib/App/Benchmark/Accessors.pm
+    version: 1.100870
+  WithClassSpiffy:
+    file: lib/App/Benchmark/Accessors.pm
+    version: 1.100870
+  WithClassXSAccessor:
+    file: lib/App/Benchmark/Accessors.pm
+    version: 1.100870
+  WithClassXSAccessorArray:
+    file: lib/App/Benchmark/Accessors.pm
+    version: 1.100870
+  WithMojo:
+    file: lib/App/Benchmark/Accessors.pm
+    version: 1.100870
+  WithMoose:
+    file: lib/App/Benchmark/Accessors.pm
+    version: 1.100870
+  WithMooseImmutable:
+    file: lib/App/Benchmark/Accessors.pm
+    version: 1.100870
+  WithMouse:
+    file: lib/App/Benchmark/Accessors.pm
+    version: 1.100870
+  WithMouseImmutable:
+    file: lib/App/Benchmark/Accessors.pm
+    version: 1.100870
+  WithObjectTiny:
+    file: lib/App/Benchmark/Accessors.pm
+    version: 1.100870
+  WithObjectTinyXS:
+    file: lib/App/Benchmark/Accessors.pm
+    version: 1.100870
+  WithRose:
+    file: lib/App/Benchmark/Accessors.pm
+    version: 1.100870
+  WithRubyishAttribute:
+    file: lib/App/Benchmark/Accessors.pm
+    version: 1.100870
+  WithSpiffy:
+    file: lib/App/Benchmark/Accessors.pm
+    version: 1.100870
 requires:
-  App::Benchmark: 0.02
+  App::Benchmark: 0
+  Carp: 0
   Class::Accessor: 0
   Class::Accessor::Classy: 0
   Class::Accessor::Complex: 0
@@ -30,18 +91,24 @@ requires:
   Class::Spiffy: 0
   Class::XSAccessor: 0
   Class::XSAccessor::Array: 0
+  English: 0
+  File::Find: 0
+  File::Temp: 0
   Mojo::Base: 0
   Moose: 0
   Mouse: 0
   Object::Tiny: 0
   Rose::Object: 0
+  Rose::Object::MakeMethods::Generic: 0
   Rubyish::Attribute: 0
+  Scalar::Util: 0
   Spiffy: 0
-  UNIVERSAL::require: 0
+  Test::More: 0.88
   accessors: 0
-  perl: 5.6.0
+  parent: 0
+  perl: 5.006
 resources:
+  bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=App-Benchmark-Accessors
   homepage: http://search.cpan.org/dist/App-Benchmark-Accessors/
-  license: http://dev.perl.org/licenses/
-  repository: git://github.com/hanekomu/app-benchmark-accessors.git
-version: 0.07
+  repository: http://github.com/hanekomu/App-Benchmark-Accessors
+version: 1.100870

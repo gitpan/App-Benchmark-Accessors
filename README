@@ -1,27 +1,78 @@
-This is the Perl distribution App-Benchmark-Accessors.
+NAME
+    App::Benchmark::Accessors - Benchmark accessor generators
 
-## Installation
+VERSION
+    version 1.100870
 
-App-Benchmark-Accessors installation is straightforward. If your CPAN shell is
-set up, you should just be able to do
+DESCRIPTION
+    This distribution runs benchmarks on various accessor generators. The
+    following generators are being benchmarked:
 
-    % cpan App::Benchmark::Accessors
+    Moose
+    Mouse
+    Class::Accessor
+    Class::Accessor::Fast
+    Class::Accessor::Fast::XS
+    Class::Accessor::Complex
+    Class::Accessor::Constructor
+    Mojo::Base
+    Class::MethodMaker
+    Object::Tiny
+    Spiffy
+    Class::Spiffy
+    "accessors"
+    Class::XSAccessor
+    Class::XSAccessor::Array
 
-Download it, unpack it, then build it as per the usual:
+    The benchmarks are being run as part of the test suite; see
+    App::Benchmark. This way you can look at this distribution's CPAN
+    testers page to see the benchmark results on many different platforms
+    and for many different perl versions.
 
-    % perl Makefile.PL
-    % make && make test
+    The "t/construction.t" file benchmarks object creation, "t/get.t"
+    benchmarks getter methods and "t/set.t" benchmarks setter methods.
 
-Then install it:
+    Not every benchmark is run on every module; for example, Object::Tiny
+    doesn't create setter methods, and accessors doesn't generate
+    constructors.
 
-    % make install
+    Each benchmark test file takes an optional numeric parameter that is
+    used as the number of iterations.
 
-## Documentation
+    It's probably a good idea not to read too much into these benchmarks;
+    they could be seen as micro-optimization. However, if you have a complex
+    object hierarchy and create lots of objects and run many many
+    getters/setters on them, they could help to save some time. But be sure
+    to use Devel::NYTProf first to see where your real bottlenecks are.
 
-App-Benchmark-Accessors documentation is available as in POD. So you can do:
+INSTALLATION
+    See perlmodinstall for information and options on installing Perl
+    modules.
 
-    % perldoc App::Benchmark::Accessors
+BUGS AND LIMITATIONS
+    No bugs have been reported.
 
-to read the documentation online with your favorite pager.
+    Please report any bugs or feature requests through the web interface at
+    <http://rt.cpan.org/Public/Dist/Display.html?Name=App-Benchmark-Accessor
+    s>.
 
-Marcel Gruenauer
+AVAILABILITY
+    The latest version of this module is available from the Comprehensive
+    Perl Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a
+    CPAN site near you, or see
+    <http://search.cpan.org/dist/App-Benchmark-Accessors/>.
+
+    The development version lives at
+    <http://github.com/hanekomu/App-Benchmark-Accessors/>. Instead of
+    sending patches, please fork this project using the standard git and
+    github infrastructure.
+
+AUTHOR
+      Marcel Gruenauer <marcel@cpan.org>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2008 by Marcel Gruenauer.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
