@@ -3,69 +3,91 @@ use strict;
 use warnings;
 
 package App::Benchmark::Accessors;
-our $VERSION = '1.100870';
+BEGIN {
+  $App::Benchmark::Accessors::VERSION = '1.102310';
+}
 # ABSTRACT: Benchmark accessor generators
 
 #<<<
 package    # hide from PAUSE
   WithMoose;
-our $VERSION = '1.100870';
+BEGIN {
+  $WithMoose::VERSION = '1.102310';
+}
 use Moose;
 has myattr => ( is => 'rw' );
 
 package    # hide from PAUSE
   WithMooseImmutable;
-our $VERSION = '1.100870';
+BEGIN {
+  $WithMooseImmutable::VERSION = '1.102310';
+}
 use Moose;
 has myattr => ( is => 'rw' );
 __PACKAGE__->meta->make_immutable;
 
 package    # hide from PAUSE
   WithMouse;
-our $VERSION = '1.100870';
+BEGIN {
+  $WithMouse::VERSION = '1.102310';
+}
 use Mouse;
 has myattr => ( is => 'rw' );
 
 package    # hide from PAUSE
   WithMouseImmutable;
-our $VERSION = '1.100870';
+BEGIN {
+  $WithMouseImmutable::VERSION = '1.102310';
+}
 use Mouse;
 has myattr => ( is => 'rw' );
 __PACKAGE__->meta->make_immutable;
 
 package    # hide from PAUSE
   WithClassAccessor;
-our $VERSION = '1.100870';
+BEGIN {
+  $WithClassAccessor::VERSION = '1.102310';
+}
 use parent qw(Class::Accessor);
 __PACKAGE__->mk_accessors(qw/myattr/);
 
 package    # hide from PAUSE
   WithClassAccessorFast;
-our $VERSION = '1.100870';
+BEGIN {
+  $WithClassAccessorFast::VERSION = '1.102310';
+}
 use parent qw(Class::Accessor::Fast);
 __PACKAGE__->mk_accessors(qw/myattr/);
 
 package    # hide from PAUSE
   WithClassAccessorFastXS;
-our $VERSION = '1.100870';
+BEGIN {
+  $WithClassAccessorFastXS::VERSION = '1.102310';
+}
 use parent qw(Class::Accessor::Fast::XS);
 __PACKAGE__->mk_accessors(qw/myattr/);
 
 package    # hide from PAUSE
   WithClassAccessorComplex;
-our $VERSION = '1.100870';
+BEGIN {
+  $WithClassAccessorComplex::VERSION = '1.102310';
+}
 use parent qw(Class::Accessor::Complex);
 __PACKAGE__->mk_new->mk_scalar_accessors(qw/myattr/);
 
 package    # hide from PAUSE
   WithClassAccessorConstructor;
-our $VERSION = '1.100870';
+BEGIN {
+  $WithClassAccessorConstructor::VERSION = '1.102310';
+}
 use parent qw(Class::Accessor::Constructor Class::Accessor::Complex);
 __PACKAGE__->mk_constructor->mk_scalar_accessors(qw/myattr/);
 
 package    # hide from PAUSE
   WithClassAccessorClassy;
-our $VERSION = '1.100870';
+BEGIN {
+  $WithClassAccessorClassy::VERSION = '1.102310';
+}
 use Class::Accessor::Classy;
 with 'new';
 rw 'myattr';
@@ -73,13 +95,17 @@ no  Class::Accessor::Classy;
 
 package    # hide from PAUSE
   WithMojo;
-our $VERSION = '1.100870';
+BEGIN {
+  $WithMojo::VERSION = '1.102310';
+}
 use parent qw(Mojo::Base);
 __PACKAGE__->attr('myattr');
 
 package    # hide from PAUSE
   WithClassMethodMaker;
-our $VERSION = '1.100870';
+BEGIN {
+  $WithClassMethodMaker::VERSION = '1.102310';
+}
 use Class::MethodMaker
     [ scalar => [ qw/myattr/ ],
       new    => [ qw/-hash new/ ],
@@ -87,30 +113,40 @@ use Class::MethodMaker
 
 package    # hide from PAUSE
   WithObjectTiny;
-our $VERSION = '1.100870';
+BEGIN {
+  $WithObjectTiny::VERSION = '1.102310';
+}
 use Object::Tiny qw/myattr/;
 
 package    # hide from PAUSE
   WithSpiffy;
-our $VERSION = '1.100870';
+BEGIN {
+  $WithSpiffy::VERSION = '1.102310';
+}
 use Spiffy -base;
 field 'myattr';
 
 package    # hide from PAUSE
   WithClassSpiffy;
-our $VERSION = '1.100870';
+BEGIN {
+  $WithClassSpiffy::VERSION = '1.102310';
+}
 use Class::Spiffy -base;
 field 'myattr';
 
 package    # hide from PAUSE
   WithAccessors;
-our $VERSION = '1.100870';
+BEGIN {
+  $WithAccessors::VERSION = '1.102310';
+}
 use accessors qw(myattr);
 sub new { bless {}, shift }
 
 package    # hide from PAUSE
   WithClassXSAccessor;
-our $VERSION = '1.100870';
+BEGIN {
+  $WithClassXSAccessor::VERSION = '1.102310';
+}
 use Class::XSAccessor accessors => { myattr => 'myattr' };
 sub new {
     my $class = shift;
@@ -119,7 +155,9 @@ sub new {
 
 package    # hide from PAUSE
   WithClassXSAccessorArray;
-our $VERSION = '1.100870';
+BEGIN {
+  $WithClassXSAccessorArray::VERSION = '1.102310';
+}
 use Class::XSAccessor::Array accessors => { myattr => 0 };
 sub new {
     my $class = shift;
@@ -129,13 +167,17 @@ sub new {
 
 package    # hide from PAUSE
   WithObjectTinyXS;
-our $VERSION = '1.100870';
+BEGIN {
+  $WithObjectTinyXS::VERSION = '1.102310';
+}
 use Object::Tiny qw/myattr/;
 use Class::XSAccessor accessors => { myattr => 'myattr' }, replace => 1;
 
 package    # hide from PAUSE
   WithRose;
-our $VERSION = '1.100870';
+BEGIN {
+  $WithRose::VERSION = '1.102310';
+}
 use parent qw(Rose::Object);
 use Rose::Object::MakeMethods::Generic(scalar => 'myattr');
 
@@ -147,7 +189,9 @@ use Rose::Object::MakeMethods::Generic(scalar => 'myattr');
 
 package    # hide from PAUSE
   WithRubyishAttribute;
-our $VERSION = '1.100870';
+BEGIN {
+  $WithRubyishAttribute::VERSION = '1.102310';
+}
 use Rubyish::Attribute;
 sub new { bless {}, shift }
 
@@ -159,13 +203,9 @@ attr_accessor "myattr";
 __END__
 =pod
 
-=head1 NAME
-
-App::Benchmark::Accessors - Benchmark accessor generators
-
 =head1 VERSION
 
-version 1.100870
+version 1.102310
 
 =head1 DESCRIPTION
 
@@ -235,7 +275,7 @@ See perlmodinstall for information and options on installing Perl modules.
 No bugs have been reported.
 
 Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org/Public/Dist/Display.html?Name=App-Benchmark-Accessors>.
+L<http://rt.cpan.org>.
 
 =head1 AVAILABILITY
 
@@ -251,7 +291,7 @@ and github infrastructure.
 
 =head1 AUTHOR
 
-  Marcel Gruenauer <marcel@cpan.org>
+Marcel Gruenauer <marcel@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

@@ -1,8 +1,5 @@
-NAME
-    App::Benchmark::Accessors - Benchmark accessor generators
-
 VERSION
-    version 1.100870
+    version 1.102310
 
 DESCRIPTION
     This distribution runs benchmarks on various accessor generators. The
@@ -53,8 +50,7 @@ BUGS AND LIMITATIONS
     No bugs have been reported.
 
     Please report any bugs or feature requests through the web interface at
-    <http://rt.cpan.org/Public/Dist/Display.html?Name=App-Benchmark-Accessor
-    s>.
+    <http://rt.cpan.org>.
 
 AVAILABILITY
     The latest version of this module is available from the Comprehensive
@@ -68,7 +64,7 @@ AVAILABILITY
     github infrastructure.
 
 AUTHOR
-      Marcel Gruenauer <marcel@cpan.org>
+    Marcel Gruenauer <marcel@cpan.org>
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2008 by Marcel Gruenauer.
