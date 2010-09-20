@@ -1,5 +1,7 @@
 Revision history for Perl extension App-Benchmark-Accessors
 
+1.102630  2010-09-20 15:22:11 Europe/Vienna
+
 1.102310  2010-08-19 10:43:45 Europe/Vienna
     - re-release (no new features) to trigger reports with fixed App::Benchmark
 

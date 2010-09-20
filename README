@@ -1,5 +1,8 @@
+NAME
+    App::Benchmark::Accessors - Benchmark accessor generators
+
 VERSION
-    version 1.102310
+    version 1.102630
 
 DESCRIPTION
     This distribution runs benchmarks on various accessor generators. The
@@ -10,6 +13,7 @@ DESCRIPTION
     Class::Accessor
     Class::Accessor::Fast
     Class::Accessor::Fast::XS
+    Class::XSAccessor::Compat
     Class::Accessor::Complex
     Class::Accessor::Constructor
     Mojo::Base
@@ -59,7 +63,8 @@ AVAILABILITY
     <http://search.cpan.org/dist/App-Benchmark-Accessors/>.
 
     The development version lives at
-    <http://github.com/hanekomu/App-Benchmark-Accessors/>. Instead of
+    <http://github.com/hanekomu/App-Benchmark-Accessors> and may be cloned
+    from <git://github.com/hanekomu/App-Benchmark-Accessors>. Instead of
     sending patches, please fork this project using the standard git and
     github infrastructure.
 

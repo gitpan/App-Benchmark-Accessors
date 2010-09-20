@@ -38,6 +38,7 @@ my %WriteMakefileArgs = (
     'Class::Spiffy' => '0',
     'Class::XSAccessor' => '0',
     'Class::XSAccessor::Array' => '0',
+    'Class::XSAccessor::Compat' => '0',
     'Mojo::Base' => '0',
     'Moose' => '0',
     'Mouse' => '0',
@@ -49,7 +50,7 @@ my %WriteMakefileArgs = (
     'accessors' => '0',
     'parent' => '0'
   },
-  'VERSION' => '1.102310',
+  'VERSION' => '1.102630',
   'test' => {
     'TESTS' => 't/*.t'
   }
