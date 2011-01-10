@@ -4,116 +4,81 @@ use warnings;
 
 package App::Benchmark::Accessors;
 BEGIN {
-  $App::Benchmark::Accessors::VERSION = '1.102630';
+  $App::Benchmark::Accessors::VERSION = '1.110100';
 }
 # ABSTRACT: Benchmark accessor generators
 
 #<<<
 package    # hide from PAUSE
   WithMoose;
-BEGIN {
-  $WithMoose::VERSION = '1.102630';
-}
 use Moose;
 has myattr => ( is => 'rw' );
 
 package    # hide from PAUSE
   WithMooseImmutable;
-BEGIN {
-  $WithMooseImmutable::VERSION = '1.102630';
-}
 use Moose;
 has myattr => ( is => 'rw' );
 __PACKAGE__->meta->make_immutable;
 
 package    # hide from PAUSE
   WithMouse;
-BEGIN {
-  $WithMouse::VERSION = '1.102630';
-}
 use Mouse;
 has myattr => ( is => 'rw' );
 
 package    # hide from PAUSE
   WithMouseImmutable;
-BEGIN {
-  $WithMouseImmutable::VERSION = '1.102630';
-}
 use Mouse;
 has myattr => ( is => 'rw' );
 __PACKAGE__->meta->make_immutable;
 
 package    # hide from PAUSE
   WithClassAccessor;
-BEGIN {
-  $WithClassAccessor::VERSION = '1.102630';
-}
 use parent qw(Class::Accessor);
 __PACKAGE__->mk_accessors(qw/myattr/);
 
 package    # hide from PAUSE
   WithClassAccessorFast;
-BEGIN {
-  $WithClassAccessorFast::VERSION = '1.102630';
-}
 use parent qw(Class::Accessor::Fast);
 __PACKAGE__->mk_accessors(qw/myattr/);
 
 package    # hide from PAUSE
   WithClassAccessorFastXS;
-BEGIN {
-  $WithClassAccessorFastXS::VERSION = '1.102630';
-}
 use parent qw(Class::Accessor::Fast::XS);
 __PACKAGE__->mk_accessors(qw/myattr/);
 
 package    # hide from PAUSE
   WithClassXSAccessorCompat;
-BEGIN {
-  $WithClassXSAccessorCompat::VERSION = '1.102630';
-}
 use parent qw(Class::XSAccessor::Compat);
 __PACKAGE__->mk_accessors(qw/myattr/);
 
 package    # hide from PAUSE
   WithClassAccessorComplex;
-BEGIN {
-  $WithClassAccessorComplex::VERSION = '1.102630';
-}
 use parent qw(Class::Accessor::Complex);
 __PACKAGE__->mk_new->mk_scalar_accessors(qw/myattr/);
 
 package    # hide from PAUSE
   WithClassAccessorConstructor;
-BEGIN {
-  $WithClassAccessorConstructor::VERSION = '1.102630';
-}
 use parent qw(Class::Accessor::Constructor Class::Accessor::Complex);
 __PACKAGE__->mk_constructor->mk_scalar_accessors(qw/myattr/);
 
 package    # hide from PAUSE
   WithClassAccessorClassy;
-BEGIN {
-  $WithClassAccessorClassy::VERSION = '1.102630';
-}
 use Class::Accessor::Classy;
 with 'new';
 rw 'myattr';
 no  Class::Accessor::Classy;
 
 package    # hide from PAUSE
+  WithClassAccessorLite;
+use Class::Accessor::Lite new => 1, rw => [qw(myattr)];
+
+package    # hide from PAUSE
   WithMojo;
-BEGIN {
-  $WithMojo::VERSION = '1.102630';
-}
 use parent qw(Mojo::Base);
 __PACKAGE__->attr('myattr');
 
 package    # hide from PAUSE
   WithClassMethodMaker;
-BEGIN {
-  $WithClassMethodMaker::VERSION = '1.102630';
-}
 use Class::MethodMaker
     [ scalar => [ qw/myattr/ ],
       new    => [ qw/-hash new/ ],
@@ -121,40 +86,25 @@ use Class::MethodMaker
 
 package    # hide from PAUSE
   WithObjectTiny;
-BEGIN {
-  $WithObjectTiny::VERSION = '1.102630';
-}
 use Object::Tiny qw/myattr/;
 
 package    # hide from PAUSE
   WithSpiffy;
-BEGIN {
-  $WithSpiffy::VERSION = '1.102630';
-}
 use Spiffy -base;
 field 'myattr';
 
 package    # hide from PAUSE
   WithClassSpiffy;
-BEGIN {
-  $WithClassSpiffy::VERSION = '1.102630';
-}
 use Class::Spiffy -base;
 field 'myattr';
 
 package    # hide from PAUSE
   WithAccessors;
-BEGIN {
-  $WithAccessors::VERSION = '1.102630';
-}
 use accessors qw(myattr);
 sub new { bless {}, shift }
 
 package    # hide from PAUSE
   WithClassXSAccessor;
-BEGIN {
-  $WithClassXSAccessor::VERSION = '1.102630';
-}
 use Class::XSAccessor accessors => { myattr => 'myattr' };
 sub new {
     my $class = shift;
@@ -163,9 +113,6 @@ sub new {
 
 package    # hide from PAUSE
   WithClassXSAccessorArray;
-BEGIN {
-  $WithClassXSAccessorArray::VERSION = '1.102630';
-}
 use Class::XSAccessor::Array accessors => { myattr => 0 };
 sub new {
     my $class = shift;
@@ -175,17 +122,11 @@ sub new {
 
 package    # hide from PAUSE
   WithObjectTinyXS;
-BEGIN {
-  $WithObjectTinyXS::VERSION = '1.102630';
-}
 use Object::Tiny qw/myattr/;
 use Class::XSAccessor accessors => { myattr => 'myattr' }, replace => 1;
 
 package    # hide from PAUSE
   WithRose;
-BEGIN {
-  $WithRose::VERSION = '1.102630';
-}
 use parent qw(Rose::Object);
 use Rose::Object::MakeMethods::Generic(scalar => 'myattr');
 
@@ -197,9 +138,6 @@ use Rose::Object::MakeMethods::Generic(scalar => 'myattr');
 
 package    # hide from PAUSE
   WithRubyishAttribute;
-BEGIN {
-  $WithRubyishAttribute::VERSION = '1.102630';
-}
 use Rubyish::Attribute;
 sub new { bless {}, shift }
 
@@ -217,7 +155,7 @@ App::Benchmark::Accessors - Benchmark accessor generators
 
 =head1 VERSION
 
-version 1.102630
+version 1.110100
 
 =head1 DESCRIPTION
 
@@ -228,7 +166,11 @@ following generators are being benchmarked:
 
 =item Moose
 
+mutable and immutable
+
 =item Mouse
+
+mutable and immutable
 
 =item Class::Accessor
 
@@ -241,6 +183,10 @@ following generators are being benchmarked:
 =item Class::Accessor::Complex
 
 =item Class::Accessor::Constructor
+
+=item Class::Accessor::Classy
+
+=item Class::Accessor::Lite
 
 =item Mojo::Base
 
@@ -257,6 +203,12 @@ following generators are being benchmarked:
 =item Class::XSAccessor
 
 =item Class::XSAccessor::Array
+
+=item Object::Tiny
+
+=item Rose
+
+=item Rubyish::Attribute
 
 =back
 
@@ -289,7 +241,7 @@ See perlmodinstall for information and options on installing Perl modules.
 No bugs have been reported.
 
 Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org>.
+L<http://rt.cpan.org/Public/Dist/Display.html?Name=App-Benchmark-Accessors>.
 
 =head1 AVAILABILITY
 
@@ -298,7 +250,7 @@ Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
 site near you, or see L<http://search.cpan.org/dist/App-Benchmark-Accessors/>.
 
 The development version lives at L<http://github.com/hanekomu/App-Benchmark-Accessors>
-and may be cloned from L<git://github.com/hanekomu/App-Benchmark-Accessors>.
+and may be cloned from L<git://github.com/hanekomu/App-Benchmark-Accessors.git>.
 Instead of sending patches, please fork this project using the standard
 git and github infrastructure.
 

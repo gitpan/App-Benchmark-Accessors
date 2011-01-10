@@ -4,7 +4,7 @@
       "Marcel Gruenauer <marcel@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.102341, CPAN::Meta::Converter version 2.102400",
+   "generated_by" : "Dist::Zilla version 4.200000, CPAN::Meta::Converter version 2.102400",
    "license" : [
       "perl_5"
    ],
@@ -27,6 +27,7 @@
             "Class::Accessor::Constructor" : 0,
             "Class::Accessor::Fast" : 0,
             "Class::Accessor::Fast::XS" : 0,
+            "Class::Accessor::Lite" : 0,
             "Class::MethodMaker" : 0,
             "Class::Spiffy" : 0,
             "Class::XSAccessor" : 0,
@@ -60,95 +61,99 @@
    "provides" : {
       "App::Benchmark::Accessors" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
       },
       "WithAccessors" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
       },
       "WithClassAccessor" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
       },
       "WithClassAccessorClassy" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
       },
       "WithClassAccessorComplex" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
       },
       "WithClassAccessorConstructor" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
       },
       "WithClassAccessorFast" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
       },
       "WithClassAccessorFastXS" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
+      },
+      "WithClassAccessorLite" : {
+         "file" : "lib/App/Benchmark/Accessors.pm",
+         "version" : "1.110100"
       },
       "WithClassMethodMaker" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
       },
       "WithClassSpiffy" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
       },
       "WithClassXSAccessor" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
       },
       "WithClassXSAccessorArray" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
       },
       "WithClassXSAccessorCompat" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
       },
       "WithMojo" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
       },
       "WithMoose" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
       },
       "WithMooseImmutable" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
       },
       "WithMouse" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
       },
       "WithMouseImmutable" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
       },
       "WithObjectTiny" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
       },
       "WithObjectTinyXS" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
       },
       "WithRose" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
       },
       "WithRubyishAttribute" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
       },
       "WithSpiffy" : {
          "file" : "lib/App/Benchmark/Accessors.pm",
-         "version" : "1.102630"
+         "version" : "1.110100"
       }
    },
    "release_status" : "stable",
@@ -159,9 +164,11 @@
       },
       "homepage" : "http://search.cpan.org/dist/App-Benchmark-Accessors/",
       "repository" : {
-         "url" : "http://github.com/hanekomu/App-Benchmark-Accessors"
+         "type" : "git",
+         "url" : "git://github.com/hanekomu/App-Benchmark-Accessors.git",
+         "web" : "http://github.com/hanekomu/App-Benchmark-Accessors"
       }
    },
-   "version" : "1.102630"
+   "version" : "1.110100"
 }
 

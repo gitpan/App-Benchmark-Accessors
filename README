@@ -2,20 +2,26 @@ NAME
     App::Benchmark::Accessors - Benchmark accessor generators
 
 VERSION
-    version 1.102630
+    version 1.110100
 
 DESCRIPTION
     This distribution runs benchmarks on various accessor generators. The
     following generators are being benchmarked:
 
     Moose
+        mutable and immutable
+
     Mouse
+        mutable and immutable
+
     Class::Accessor
     Class::Accessor::Fast
     Class::Accessor::Fast::XS
     Class::XSAccessor::Compat
     Class::Accessor::Complex
     Class::Accessor::Constructor
+    Class::Accessor::Classy
+    Class::Accessor::Lite
     Mojo::Base
     Class::MethodMaker
     Object::Tiny
@@ -24,6 +30,9 @@ DESCRIPTION
     "accessors"
     Class::XSAccessor
     Class::XSAccessor::Array
+    Object::Tiny
+    Rose
+    Rubyish::Attribute
 
     The benchmarks are being run as part of the test suite; see
     App::Benchmark. This way you can look at this distribution's CPAN
@@ -54,7 +63,8 @@ BUGS AND LIMITATIONS
     No bugs have been reported.
 
     Please report any bugs or feature requests through the web interface at
-    <http://rt.cpan.org>.
+    <http://rt.cpan.org/Public/Dist/Display.html?Name=App-Benchmark-Accessor
+    s>.
 
 AVAILABILITY
     The latest version of this module is available from the Comprehensive
@@ -64,7 +74,7 @@ AVAILABILITY
 
     The development version lives at
     <http://github.com/hanekomu/App-Benchmark-Accessors> and may be cloned
-    from <git://github.com/hanekomu/App-Benchmark-Accessors>. Instead of
+    from <git://github.com/hanekomu/App-Benchmark-Accessors.git>. Instead of
     sending patches, please fork this project using the standard git and
     github infrastructure.
 

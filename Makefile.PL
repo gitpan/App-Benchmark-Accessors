@@ -34,6 +34,7 @@ my %WriteMakefileArgs = (
     'Class::Accessor::Constructor' => '0',
     'Class::Accessor::Fast' => '0',
     'Class::Accessor::Fast::XS' => '0',
+    'Class::Accessor::Lite' => '0',
     'Class::MethodMaker' => '0',
     'Class::Spiffy' => '0',
     'Class::XSAccessor' => '0',
@@ -50,7 +51,7 @@ my %WriteMakefileArgs = (
     'accessors' => '0',
     'parent' => '0'
   },
-  'VERSION' => '1.102630',
+  'VERSION' => '1.110100',
   'test' => {
     'TESTS' => 't/*.t'
   }
