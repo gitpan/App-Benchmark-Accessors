@@ -1,12 +1,7 @@
-use 5.006;
+package App::Benchmark::Accessors;
 use strict;
 use warnings;
-
-package App::Benchmark::Accessors;
-BEGIN {
-  $App::Benchmark::Accessors::VERSION = '1.110100';
-}
-# ABSTRACT: Benchmark accessor generators
+our $VERSION = '2.00';
 
 #<<<
 package    # hide from PAUSE
@@ -145,17 +140,11 @@ attr_accessor "myattr";
 #>>>
 1;
 
-
 __END__
-=pod
 
 =head1 NAME
 
 App::Benchmark::Accessors - Benchmark accessor generators
-
-=head1 VERSION
-
-version 1.110100
 
 =head1 DESCRIPTION
 
@@ -232,38 +221,21 @@ hierarchy and create lots of objects and run many many getters/setters on
 them, they could help to save some time. But be sure to use L<Devel::NYTProf>
 first to see where your real bottlenecks are.
 
-=head1 INSTALLATION
+=head1 AUTHORS
 
-See perlmodinstall for information and options on installing Perl modules.
+The following person is the author of all the files provided in
+this distribution unless explicitly noted otherwise.
 
-=head1 BUGS AND LIMITATIONS
-
-No bugs have been reported.
-
-Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org/Public/Dist/Display.html?Name=App-Benchmark-Accessors>.
-
-=head1 AVAILABILITY
-
-The latest version of this module is available from the Comprehensive Perl
-Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
-site near you, or see L<http://search.cpan.org/dist/App-Benchmark-Accessors/>.
-
-The development version lives at L<http://github.com/hanekomu/App-Benchmark-Accessors>
-and may be cloned from L<git://github.com/hanekomu/App-Benchmark-Accessors.git>.
-Instead of sending patches, please fork this project using the standard
-git and github infrastructure.
-
-=head1 AUTHOR
-
-Marcel Gruenauer <marcel@cpan.org>
+Marcel Gruenauer C<< <marcel@cpan.org> >>, L<http://marcelgruenauer.com>
 
 =head1 COPYRIGHT AND LICENSE
+
+The following copyright notice applies to all the files provided in
+this distribution, including binary files, unless explicitly noted
+otherwise.
 
 This software is copyright (c) 2008 by Marcel Gruenauer.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
-
-=cut
 
